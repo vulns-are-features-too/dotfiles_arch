@@ -1,0 +1,3 @@
+--style='header,grid'
+--italic-text=always
+-m '*.conf:INI'

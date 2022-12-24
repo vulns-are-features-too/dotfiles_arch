@@ -1,0 +1,38 @@
+" vim: filetype=vim
+
+" Allow Ctrl-a to select all in the commandline
+unbind --mode=ex <C-a>
+
+" Allow Ctrl-c to copy in the commandline
+unbind --mode=ex <C-c>
+
+unbind --mode=normal <C-f>
+
+colorscheme dark
+
+set searchengine duckduckgo
+set smoothscroll true
+set newtab about:blank
+set modeindicatorshowkeys true
+
+" ignore mode hides mode indicator
+"set modeindicatormodes {"ignore":"false"}
+
+" Start these in ignore mode
+autocmd DocStart mail.google.com mode ignore
+autocmd DocStart drive.google.com mode ignore
+autocmd DocStart youtube.com mode ignore
+
+"autocmd DocStart youtube.com set modeindicator false
+
+" Hide/unhide mode indicator on fullscreen
+autocmd FullscreenEnter * set modeindicator false
+autocmd FullscreenLeft * set modeindicator true
+
+bind H tabprev
+bind L tabnext
+bind K forward
+bind J back
+
+bind i hint -S
+bind I hint -A

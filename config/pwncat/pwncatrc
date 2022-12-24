@@ -1,0 +1,10 @@
+# vi: ft=sh
+
+# aliases
+alias up upload
+alias down download
+alias q exit
+
+# shortcuts
+shortcut ! local
+shortcut @ run

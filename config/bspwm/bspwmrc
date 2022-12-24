@@ -1,0 +1,52 @@
+#!/bin/sh
+
+# If refreshing bspwm, remove all previous rules to prevent doubling up.
+bspc rule -r "*"
+
+# We look for a non-laptop monitor to use for default, but use the laptop
+# screen (LVDS) if there's nothing else. This is because I assume that if you
+# have an extra screen attached to a laptop, you want to use that.
+mainmonitor="$(bspc query --monitors --names | grep -v LVDS | head -n 1)"
+
+if [[ "$mainmonitor" == "Virtual"* ]]; then
+	#resolution=$(cvt 1920 1080 60 | tail -1 | cut -d ' ' -f 2-)
+	#resolution_name=$(echo $resolution | cut -d '"' -f 2)
+	#xrandr --newmode $resolution
+	#xrandr --addmode $mainmonitor $resolution_name
+	#xrandr -s $resolution_name
+	xrandr --newmode "1920x1080_60.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync
+	xrandr --addmode "$mainmonitor" '1920x1080_60.00'
+	xrandr -s "1920x1080_60.00"
+elif ! echo "$mainmonitor" | grep LVDS >/dev/null 2>&1; then
+	xrandr --output "$mainmonitor" --auto --output LVDS --off
+fi
+
+# Start workspaces on the main monitor.
+bspc monitor "$mainmonitor" -d 1 2 3 4 5 6 7 8 9 0
+bspc desktop -f 1
+
+bspc config border_width 3
+bspc config window_gap 0
+bspc config top_padding 20	# top_padding I set equal to polybar's height
+bspc config focus_follows_pointer false
+
+dropdownname="dropdown"
+bspc query -N -n .hidden >/dev/null || setsid "$TERMINAL" -n "$dropdownname" -e dropdown >/dev/null 2>&1 &
+bspc rule -a St:$dropdownname hidden=on
+bspc rule -a St:$dropdownname sticky=on
+bspc rule -a St:$dropdownname state=floating
+#bspc rule -a python state=floating
+bspc rule -a Screenkey manage=off
+bspc rule -a Zathura state=tiled
+
+# Fix Java applications
+wmname LG3D
+
+pgrep sxhkd || sxhkd &
+launch_polybar &
+
+# VirtualBox client
+if [ "$(systemd-detect-virt)" != "none" ]; then
+  VBoxClient --clipboard
+  VBoxClient --draganddrop
+fi

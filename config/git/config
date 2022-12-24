@@ -1,0 +1,4 @@
+[diff "lesspipe"]
+textconv = LESSQUIET=1 lesspipe.sh
+binary = true
+cachetextconv = true

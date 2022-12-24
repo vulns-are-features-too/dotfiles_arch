@@ -1,0 +1,9 @@
+load alias
+
+alias -f r run
+alias -f sg setg
+alias q exit
+alias s set
+alias u use
+alias o "show options"
+alias st "set LHOST tun0"

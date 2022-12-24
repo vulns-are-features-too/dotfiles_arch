@@ -1,0 +1,9 @@
+*log
+TODO
+__pycache__
+backup
+config/calcurse/caldav/config
+config/calcurse/caldav/oauth2_cred
+config/shelf/modules/*
+config/vifm/vifminfo*
+tags

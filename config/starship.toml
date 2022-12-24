@@ -1,0 +1,48 @@
+add_newline = false
+
+format = """
+$shell\
+$sudo\
+❯\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$git_commit\
+$line_break\
+$status\
+$character\
+"""
+
+[directory]
+truncation_length = 10
+truncate_to_repo = false
+style = "bold green"
+
+[git_branch]
+format = "[$symbol$branch]($style)"
+
+[git_status]
+conflicted = "!"
+modified = "="
+staged = "+"
+deleted = "X"
+
+[character]
+success_symbol = "[\\$](bold green)"
+error_symbol = "[\\$](bold red)"
+vicmd_symbol = "[V](bold green)"
+
+[shell]
+disabled = false
+bash_indicator = "B"
+zsh_indicator = "Z"
+powershell_indicator = "PS"
+cmd_indicator = "CMD"
+
+[sudo]
+disabled = false
+symbol = "#"
+style = "bold red"
+format = "[$symbol]($style) "

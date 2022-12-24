@@ -1,0 +1,223 @@
+##### Basic bindings #####
+
+super + t
+	unicode_copy
+super + shift + t
+	$TERMINAL -e tremc -n
+super + i
+	$TERMINAL -e btop
+super + o
+	$TERMINAL -e calcurse
+super + shift + o
+	obsidian
+super + p
+	$TERMINAL -e bpython
+super + d
+	dmenu_run -i
+super + shift + d
+	discord
+super + f
+	$TERMINAL -e $FILE_CLI
+super + shift + f
+	$FILE_GUI
+super + v
+	clipmenu -i
+super + ctrl + v
+	clipdel -d . && notify-send "Nuked clipmenu"
+super + b
+	$BROWSER
+super + shift + b
+  $BROWSER --private-window
+super + ctrl + b
+  $TERMINAL -e fuzzy-bookmark
+super + n
+	$TERMINAL -e newsboat
+super + shift + n
+	$TERMINAL -e nmtui
+super + m
+	$TERMINAL -e ncmpcpp
+super + shift + m
+	$TERMINAL -e pulsemixer
+super + ctrl + m
+  pavucontrol
+super + ctrl + shift + m
+	thunderbird
+super + F1
+	$TERMINAL -e batman --paging=always
+super + Return
+	$TERMINAL
+super + shift + Return
+	$TERMINAL -e tmux new -A -s general
+
+##### bspwm #####
+
+# close/kill
+super + {shift,ctrl} + q
+	bspc node -{c,k}
+# Close all nodes in the current desktop
+super + shift + ctrl + q
+  bspc node @/ -c
+
+# focus the node in the given direction
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+# resize window
+super + ctrl + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+super + ctrl + shift + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# alternate between the tiled, monocle, and fullscreen
+super + {_,shift + }F11
+	bspc {desktop -l next,node -t '~fullscreen'}
+
+# cycle between nodes
+#super + space
+	#bspc node -f next.local
+# swap the current node and the biggest local node
+#super + shift + space
+	#bspc node -s biggest.local || bspc node -s next.local
+
+# focus the node for the given path jump
+#super + {p,b,comma,period}
+	#bspc node -f @{parent,brother,first,second}
+
+super + {a,s}
+	bspc desktop {prev,next}.occupied --focus
+{super,alt} + Tab
+	bspc desktop last --focus
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} ^{1-9,10}
+
+# move all nodes on the current desktop to another desktop (retains the tree structure)
+super + ctrl + d; {1-9,0}
+	bspc node @/ -d {1-9,10}
+
+# preselect the direction
+super + r; {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+# preselect the ratio
+super + r; {1-9}
+	bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+super + shift + r
+	bspc node -p cancel
+
+# cancel the preselection for the focused desktop
+#super + space
+#bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+# expand a window by moving one of its side outward
+#super + shift + {y,u,i,o}
+	#bspc node -z {right -20 0,bottom 0 20,bottom 0 -20,right 20 0}
+
+# move a floating window
+super + alt + {h,j,k,l}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+super + ctrl + u; {q,w,e,a,s,d,z,x,c}
+	move_floating 3 3 {1,2,3,4,5,6,7,8,9}
+
+# Toggle floating
+super + u
+	bspc node focused -t \~floating
+
+# Make a windoww sticky/non-sticky
+super + shift + u
+	bspc node -g sticky={on,off}
+
+# Hide/Unhide node(s)
+super + y
+	bspc node -g hidden=on
+super + shift + y
+	bsp_unhideall
+
+#super + {i,o}
+	#bspc node -f {prev,next}.local
+#super + shift + n
+	#bspc node focused -t \~floating ; hover right
+#super + shift + b
+	#bspc node focused -t \~floating ; hover left
+
+##### Power and daemons #####
+
+# Menu for shutdown, reboot, etc.
+super + F12
+	power_menu
+# Quick lock screen
+super + shift + F12
+	i3lock -c 000000
+
+# restart daemons
+super + F5
+	pkill -USR1 -x sxhkd; \
+	killall dunst; \
+	dunst & \
+	notify-send "Restart daemons"
+# restart polybar
+super + shift + F5
+	launch_polybar
+# restart bspwm
+super + ctrl + F5
+	bspc wm -r
+super + ctrl + shift + F5
+	bspc quit
+
+##### Music #####
+
+{super + space,XF86AudioPlay}
+	mpc toggle
+super + {z,x}
+  mpc {prev,next}
+XF86Audio{Prev,Next}
+  mpc {prev,next}
+super + shift + {Left,Right}
+	mpc seek {-,+}10
+shift + XF86Audio{Prev,Next}
+	mpc seek {-,+}10
+
+##### Screenshots #####
+
+# full screenshot to clipboard
+Print
+	maim | xclip -selection clipboard -t image/png && notify-send "Copied screenshot to clipboard"
+# full screenshot to file
+shift + Print
+	maim "$HOME/Pictures/screenshots/screenshot_$(date '+%y%m%d-%H%M-%S').png" && notify-send "Saved screenshot"
+ctrl + Print
+	flameshot gui -p ~/Pictures/screenshots
+super + Print
+	flameshot gui -c
+
+##### XF86 keys #####
+
+# Audio
+super + {q,w}
+	pactl set-sink-volume 0 {-,+}5%
+XF86Audio{Lower,Raise}Volume
+	pactl set-sink-volume 0 {-,+}5%
+super + shift + space
+	pactl set-sink-mute 0 toggle
+XF86AudioMute
+	pactl set-sink-mute 0 toggle
+
+# Screen
+XF86MonBrightness{Up,Down}
+	xbacklight -{inc,dec} 5
+super + shift + {Up,Down}
+	xbacklight -{inc,dec} 5
+
+##### Presentations #####
+
+# Select screen
+super + F8
+	screencast-mirror
+# Run stuff to assist with presentation
+super + shift + F7
+	screenkey
+# Stop presentation programs
+super + F7
+	killall screenkey
