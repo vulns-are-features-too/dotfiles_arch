@@ -52,8 +52,10 @@ super + shift + Return
 ##### bspwm #####
 
 # close/kill
-super + {shift,ctrl} + q
-	bspc node -{c,k}
+super + q
+	bspc node -c
+super + ctrl + q
+	bspc node -k
 # Close all nodes in the current desktop
 super + shift + ctrl + q
   bspc node @/ -c
@@ -195,7 +197,7 @@ super + Print
 ##### XF86 keys #####
 
 # Audio
-super + {q,w}
+super + {w,e}
 	pactl set-sink-volume 0 {-,+}5%
 XF86Audio{Lower,Raise}Volume
 	pactl set-sink-volume 0 {-,+}5%

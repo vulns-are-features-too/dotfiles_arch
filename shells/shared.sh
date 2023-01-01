@@ -1,5 +1,5 @@
 #!/bin/sh
-# shellcheck disable=SC2139,SC3010
+# shellcheck disable=SC2139,SC3009,SC3010
 
 ### utils ###
 
@@ -86,7 +86,8 @@ alias q='exit'
 alias o='xdg-open'
 alias h='help'
 alias hh='tldr'
-alias py='python3 -c'
+alias py='python3'
+alias pyc='python3 -c'
 alias bwp='bw generate -ulns --length'
 alias m='setsid mpv'
 alias mpvrand="xargs -d '\n' mpv --shuffle"
@@ -99,6 +100,7 @@ alias vpn="sudo openvpn"
 alias frm='fuzzy-rm'
 alias jj='just'
 alias jl='just --list'
+alias cls='clear'
 
 # pueue
 alias pq='pueue'
@@ -248,7 +250,3 @@ sub_vid() {
   tmp="$(mktemp --suffix=".${1##*.}")"
   ffmpeg -i "$1" -i "$2" -c:v copy -c:a copy -c:s mov_text -y "$tmp" "${@[@]:3}" && mv "$tmp" "${1}"
 }
-
-# Set up dev env
-dev_env="$HOME/.config/dev.env"
-[ -f "$dev_env" ] && . "$dev_env"
