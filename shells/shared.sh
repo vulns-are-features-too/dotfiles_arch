@@ -30,6 +30,7 @@ alias ez="$EDITOR ~/.zshrc"
 alias ea="xargs -d '\n' $EDITOR"
 alias er="$EDITOR README.md"
 alias et="$EDITOR TODO.md"
+alias ek="$EDITOR ~/.config/sxhkd/sxhkdrc"
 
 # git
 alias g='git'
@@ -106,7 +107,7 @@ alias cls='clear'
 alias pq='pueue'
 alias pf='pueue-fuzzy'
 alias psum='pueue status -j | jq -r -f ~/git/scripts/jq/pueue_summary.jq'
-alias pqc='pueue clean'
+alias pqc='pueue clean -s'
 alias pqa='pueue add'
 alias pqr='pueue restart -ai'
 

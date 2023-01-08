@@ -12,18 +12,12 @@ super + shift + o
 	obsidian
 super + p
 	$TERMINAL -e bpython
-super + d
-	dmenu_run -i
 super + shift + d
 	discord
 super + f
 	$TERMINAL -e $FILE_CLI
 super + shift + f
 	$FILE_GUI
-super + v
-	clipmenu -i
-super + ctrl + v
-	clipdel -d . && notify-send "Nuked clipmenu"
 super + b
 	$BROWSER
 super + shift + b
@@ -34,20 +28,33 @@ super + n
 	$TERMINAL -e newsboat
 super + shift + n
 	$TERMINAL -e nmtui
-super + m
-	$TERMINAL -e ncmpcpp
 super + shift + m
-	$TERMINAL -e pulsemixer
+	$TERMINAL -e ncmpcpp
 super + ctrl + m
-  pavucontrol
+	$TERMINAL -e pulsemixer
 super + ctrl + shift + m
-	thunderbird
+  pavucontrol
 super + F1
 	$TERMINAL -e batman --paging=always
 super + Return
 	$TERMINAL
 super + shift + Return
 	$TERMINAL -e tmux new -A -s general
+
+##### rofi #####
+
+super + space; d
+	rofi -show drun
+super + space; r
+	rofi -show run
+super + space; c
+	bwmenu
+super + space; b
+	buku_run
+super + v
+	clip
+super + ctrl + v
+	pkill greenclip && greenclip clear && notify-send "Nuked clipboard" && greenclip daemon &
 
 ##### bspwm #####
 
@@ -170,7 +177,7 @@ super + ctrl + shift + F5
 
 ##### Music #####
 
-{super + space,XF86AudioPlay}
+{super + m,XF86AudioPlay}
 	mpc toggle
 super + {z,x}
   mpc {prev,next}
