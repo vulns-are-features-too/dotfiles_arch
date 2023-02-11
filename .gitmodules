@@ -1,6 +1,6 @@
 [submodule "config/nvim"]
 	path = config/nvim
-	url = git@github.com:ChocolateOverflow/nvim-config.git
+	url = https://github.com/ChocolateOverflow/nvim-config
 [submodule "config/gf"]
 	path = config/gf
-	url = git@github.com:ChocolateOverflow/gf-patterns.git
+	url = https://github.com/ChocolateOverflow/gf-patterns

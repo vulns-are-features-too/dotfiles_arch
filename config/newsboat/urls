@@ -17,3 +17,5 @@ https://threatpost.com/feed/
 https://www.esecurityplanet.com/rss.xml
 https://www.schneier.com/blog/atom.xml
 https://www.tripwire.com/state-of-security/feed/
+https://wiki.archlinux.org/api.php?hidebots=1&urlversion=1&days=7&limit=50&action=feedrecentchanges&feedformat=rss
+https://archlinux.org/feeds/news/

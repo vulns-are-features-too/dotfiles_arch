@@ -9,16 +9,22 @@
 ;=====================================================
 
 [colors]
-black			= #000000
-darkgray	= #222222
-lightgray	= #aaaaaa
-white			= #ffffff
-red			  = #aa0000
-green			= #55dd55
-blue			= #5073aa
-yellow		= #ffff00
-;background = ${xrdb:color256:#0000000}
-;foreground = ${xrdb:color257:#ffffff}
+bg = #222836
+fg = #dbdce0
+black = #000000
+red = #ff294f
+green = #22cf77
+yellow = #fdfd8a
+blue = #20e5c9
+purple = #5e4caa
+cyan = #7ae6f2
+white = #abb2bf
+teal = #599CAA
+gray = #6E7185
+orange = #ff7f32
+pink = #EF7CBB
+magenta = #e84782
+lime = #C2C33F
 
 [bar/default]
 ;monitor = ${env:MONITOR:LVDS-1}
@@ -29,10 +35,10 @@ height = 20
 fixed-center = false
 
 background = ${colors.black}
-foreground = ${colors.white}
+foreground = ${colors.fg}
 
 border-size = 0
-border-color = ${colors.white}
+border-color = ${colors.fg}
 
 padding-left = 0
 padding-right = 0
@@ -41,9 +47,8 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = mono:pixelsize=9;1
-font-1 = ttf-font-awesome:pixelsize=9;1
-font-2 = ttf-hanazono:pixelsize=9;1
-font-3 = ttf-sazanami:pixelsize=9;1
+font-1 = mono:pixelsize=11:weight=bold;1
+font-2 = ttf-font-awesome:pixelsize=9;1
 
 modules-left = bspwm xkeyboard xwindow
 modules-right = mpd volume backlight battery cpu memory wifi time
@@ -71,7 +76,7 @@ blacklist-1 = scroll lock
 format = <label-indicator>
 label-indicator-on-capslock = CAPS
 label-indicator-on-capslock-background = ${colors.red}
-label-indicator-on-capslock-foreground = ${colors.white}
+label-indicator-on-capslock-foreground = ${colors.green}
 label-indicator-margin = 0
 label-indicator-padding = 0
 
@@ -82,22 +87,24 @@ pin-workspaces = true
 enable-scroll = false
 
 label-focused = %index%
-label-focused-foreground = ${colors.white}
-label-focused-background = ${colors.blue}
+label-focused-font = 2
+label-focused-foreground = ${colors.bg}
+label-focused-background = ${colors.green}
 label-focused-padding = 1
 
 label-occupied = %index%
-label-occupied-foreground = ${colors.yellow}
-label-occupied-background = ${colors.darkgray}
+label-occupied-font = 2
+label-occupied-foreground = ${colors.lime}
+label-occupied-background = ${colors.bg}
 label-occupied-padding = 1
 
 label-urgent = %index%!
-label-urgent-foreground = ${colors.darkgray}
+label-urgent-foreground = ${colors.fg}
 label-urgent-background = ${colors.red}
 label-urgent-padding = 1
 
 label-empty = %index%
-label-empty-foreground = ${colors.lightgray}
+label-empty-foreground = ${colors.fg}
 label-empty-background = ${colors.black}
 label-empty-padding = 1
 
@@ -108,7 +115,7 @@ click-right = mpc toggle
 label-song =  %title% - %artist%
 label-song-maxlen = 50
 label-song-ellipsis = true
-format-paused-foreground = ${colors.lightgray}
+format-paused-foreground = ${colors.gray}
 
 [module/wifi]
 type = internal/network
@@ -120,13 +127,13 @@ label-connected = %essid% <%signal%|%netspeed%>
 speed-unit =
 label-connected-maxlen = 30
 label-connected-foreground = ${colors.green}
-label-connected-background = ${colors.darkgray}
+label-connected-background = ${colors.bg}
 format-connected = <label-connected>
 label-connected-padding = 0
 
 label-disconnected = no wifi
 label-disconnected-foreground = ${colors.yellow}
-label-disconnected-background = ${colors.darkgray}
+label-disconnected-background = ${colors.bg}
 format-disconnected = <label-disconnected>
 label-disconnected-padding = 0
 
@@ -140,13 +147,13 @@ interval = 1
 ;label-connected = ETH: %local_ip%
 label-connected = ETH
 label-connected-foreground = ${colors.green}
-label-connected-background = ${colors.darkgray}
+label-connected-background = ${colors.bg}
 label-connected-padding = 0
 
 ;label-disconnected = no eth
 label-disconnected = ETH
 label-disconnected-foreground = ${colors.yellow}
-label-disconnected-background = ${colors.darkgray}
+label-disconnected-background = ${colors.bg}
 label-disconnected-padding = 0
 
 [module/time]
@@ -177,11 +184,11 @@ use-ui-max = true
 format-volume = <label-volume>
 label-volume = VOL %percentage%%
 label-volume-foreground = ${colors.green}
-label-volume-background = ${colors.darkgray}
+label-volume-background = ${colors.bg}
 label-volume-padding = 0
 
 format-muted-foreground = ${colors.yellow}
-format-muted-background = ${colors.darkgray}
+format-muted-background = ${colors.bg}
 label-muted = "muted"
 label-muted-padding = 0
 
@@ -191,8 +198,8 @@ card = intel_backlight
 use-actual-brightness = true
 format =<label>
 label = BL %percentage%%
-format-background = ${colors.darkgray}
-format-foreground = ${colors.white}
+format-background = ${colors.bg}
+format-foreground = ${colors.fg}
 label-padding = 0
 
 [module/battery]
@@ -202,18 +209,18 @@ adapter = ADP1
 full-at = 96
 
 format-charging = POW <label-charging>
-format-charging-background = ${colors.green}
-format-charging-foreground = ${colors.darkgray}
+format-charging-background = ${colors.bg}
+format-charging-foreground = ${colors.green}
 format-charging-padding = 0
 
 format-discharging = POW: <label-discharging>
-format-discharging-background = ${colors.darkgray}
-format-discharging-foreground = ${colors.white}
+format-discharging-background = ${colors.bg}
+format-discharging-foreground = ${colors.fg}
 format-discharging-padding = 0
 
 format-full = POW: 100%
-format-full-background = ${colors.green}
-format-full-foreground = ${colors.red}
+format-full-background = ${colors.bg}
+format-full-foreground = ${colors.yellow}
 format-full-padding = 0
 
 [module/cpu]
@@ -221,16 +228,16 @@ type = internal/cpu
 interval = 1
 format = <label>
 label = CPU %percentage%%
-format-background = ${colors.darkgray}
-format-foreground = ${colors.white}
+format-background = ${colors.bg}
+format-foreground = ${colors.fg}
 
 [module/memory]
 type = internal/memory
 interval = 1
 format = <label>
 label = RAM %gb_used%
-format-background = ${colors.darkgray}
-format-foreground = ${colors.white}
+format-background = ${colors.bg}
+format-foreground = ${colors.fg}
 
 [settings]
 screenchange-reload = true

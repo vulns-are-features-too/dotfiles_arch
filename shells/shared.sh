@@ -22,7 +22,8 @@ alias se="sudoedit"
 alias ee="$EDITOR ~/.config/nvim/init.vim"
 alias eek="$EDITOR ~/.config/nvim/lua/settings/keymaps.lua"
 alias eep="$EDITOR ~/.config/nvim/lua/plugins/plugins.lua"
-alias ep="cd -P ~/.config/nvim/lua/plugins/ && ${EDITOR} -c ':Telescope find_files'"
+alias eel="$EDITOR ~/.config/nvim/lua/plugins/lsp.lua"
+alias ep="cd -P ~/.config/nvim/lua/plugins/ && ${EDITOR} -c 'Telescope find_files'"
 alias eet="$EDITOR ~/.config/tmux/tmux.conf"
 alias es="$EDITOR ~/git/dotfiles/shells/shared.sh"
 alias eb="$EDITOR ~/.bashrc"
@@ -31,18 +32,23 @@ alias ea="xargs -d '\n' $EDITOR"
 alias er="$EDITOR README.md"
 alias et="$EDITOR TODO.md"
 alias ek="$EDITOR ~/.config/sxhkd/sxhkdrc"
+alias en='vidir'
+alias eo="$EDITOR -c 'Telescope oldfiles'"
 
 # git
 alias g='git'
 alias gr='cd_git_root'
 alias gd='git diff'
+alias gdh='git diff HEAD'
 alias gD='git difftool'
+alias gD='git difftool HEAD'
 alias gs='git status'
 alias ga='git add .'
 alias gc='git commit'
 alias gp='git push'
 alias gP='git pull'
 alias gC='git rev-parse --short HEAD'
+alias gCC='git rev-parse HEAD'
 alias gcl='git clone --depth 1'
 alias {G,lg}='lazygit'
 
@@ -50,9 +56,9 @@ alias {G,lg}='lazygit'
 if type exa > /dev/null; then
   alias {ls,l,sl,exa}='exa --group-directories-first'
   alias la='exa -a'
-  alias ll='exa -Fgl'
-  alias lla='exa -aFgl'
-  alias lld='exa -dgl'
+  alias ll='exa -Fgl --header'
+  alias lla='exa -aFgl --header'
+  alias lld='exa -dgl --header'
   alias tree='exa -F --git-ignore --tree'
   alias ltree='exa -Fl --tree'
 else
@@ -176,7 +182,7 @@ cd_git_root() {
 
 fj() {
   # fuzzy find jump to a dir or the dir containing a file
-  target="$(fd --hidden --follow --exclude .git | fzf)" &&
+  target="$(fd --hidden --follow --exclude .git | fzf --disabled)" &&
     if [ -d "$target" ]; then
       cd "$target"
     else
@@ -184,9 +190,14 @@ fj() {
     fi || exit 1
 }
 
-ec() {
-  # edit config
-  fzf
+ed() {
+  # edit dotfiles
+  fd -H -tf -tl . ~/git/dotfiles/ | fzf -m | ea
+}
+
+fp() {
+  # fuzzy-find file path and copy it to clipboard
+  fzf | c
 }
 
 icmpdump() {

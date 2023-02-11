@@ -31,7 +31,7 @@ if !has('win')
 endif
 
 " Set custom status line look
-set statusline="  %z%= %A %10u:%-7g %15s %20d  "
+set statusline="%z%= %A %10u:%-7g %15s %20d "
 
 " Trash dir
 set trashdir='~/.trash'
@@ -64,7 +64,6 @@ command! reload :write | restart
 command! id3 :!id3 %f
 command! aud :!audacity %f
 command! oyt :!oyt %f
-command! seed :!move-files-to-seed %f
 
 " ------------------------------------------------------------------------------
 
@@ -372,7 +371,7 @@ nnoremap ,w :set wrap!<cr>
 nnoremap <A-q> :q<CR>
 
 " git
-noremap ,g :!tig<CR>
+noremap ,g :!lazygit<CR>
 
 " select
 noremap <space> :select<cr>

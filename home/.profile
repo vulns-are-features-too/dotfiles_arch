@@ -10,7 +10,7 @@ export PERL_MM_OPT="INSTALL_BASE=/home/jco/perl5"
 export LIBVA_DRIVER_NAME=vdpau
 export JAVA_HOME=/usr/lib/jvm/default
 PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.npm/bin:/usr/bin/vendor_perl:$GOPATH/bin:$HOME/perl5/bin:$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
-PATH="$HOME/git/scripts:$(fd . -t d "$HOME/git/scripts" | tr '\n' ':' | sed 's/:*$//'):$PATH"
+PATH="$HOME/git/scripts:$(fd . -t d "$HOME/git/scripts" | sed 's|/$||' | tr '\n' ':' | sed 's/:*$//'):$PATH"
 export PATH
 
 # Default applications
@@ -34,7 +34,10 @@ export LESSOPEN="|/usr/bin/lesspipe.sh %s"
 export TIME_STYLE=long-iso
 
 # zoxide
-export _ZO_RESOLVE_SYMLINKS=1
+export _ZO_RESOLVE_SYMLINKS=0
+
+# mpc
+export MPC_FORMAT='%title% - %artist%'
 
 # Increase batch limit
 ulimit -n 40000

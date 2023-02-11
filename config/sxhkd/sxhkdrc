@@ -2,17 +2,17 @@
 
 super + t
 	unicode_copy
-super + shift + t
+super + space; t
 	$TERMINAL -e tremc -n
 super + i
 	$TERMINAL -e btop
 super + o
 	$TERMINAL -e calcurse
-super + shift + o
+super + space; o
 	obsidian
 super + p
 	$TERMINAL -e bpython
-super + shift + d
+super + space; d
 	discord
 super + f
 	$TERMINAL -e $FILE_CLI
@@ -22,7 +22,7 @@ super + b
 	$BROWSER
 super + shift + b
   $BROWSER --private-window
-super + ctrl + b
+super + space; b
   $TERMINAL -e fuzzy-bookmark
 super + n
 	$TERMINAL -e newsboat
@@ -30,9 +30,9 @@ super + shift + n
 	$TERMINAL -e nmtui
 super + shift + m
 	$TERMINAL -e ncmpcpp
-super + ctrl + m
+super + space; m
 	$TERMINAL -e pulsemixer
-super + ctrl + shift + m
+super + ctrl + m
   pavucontrol
 super + F1
 	$TERMINAL -e batman --paging=always
@@ -43,7 +43,7 @@ super + shift + Return
 
 ##### rofi #####
 
-super + space; d
+super + d
 	rofi -show drun
 super + space; r
 	rofi -show run
@@ -177,7 +177,7 @@ super + ctrl + shift + F5
 
 ##### Music #####
 
-{super + m,XF86AudioPlay}
+{super + m,XF86AudioPlay, super + space; space, super + space; super + space}
 	mpc toggle
 super + {z,x}
   mpc {prev,next}
