@@ -20,6 +20,9 @@ export FILE_CLI="vifm"
 export FILE_GUI="pcmanfm"
 export TERMINAL="alacritty"
 
+# python
+export PYTHONSTARTUP="$HOME/.config/pythonrc"
+
 # building
 export RUSTC_WRAPPER='/usr/bin/sccache'
 

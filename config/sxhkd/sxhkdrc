@@ -22,8 +22,6 @@ super + b
 	$BROWSER
 super + shift + b
   $BROWSER --private-window
-super + space; b
-  $TERMINAL -e fuzzy-bookmark
 super + n
 	$TERMINAL -e newsboat
 super + shift + n
@@ -38,8 +36,8 @@ super + F1
 	$TERMINAL -e batman --paging=always
 super + Return
 	$TERMINAL
-super + shift + Return
-	$TERMINAL -e tmux new -A -s general
+super + ctrl + Return
+	$TERMINAL -e zellij
 
 ##### rofi #####
 

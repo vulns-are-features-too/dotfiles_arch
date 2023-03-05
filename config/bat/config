@@ -1,3 +1,6 @@
---style='header,grid'
 --italic-text=always
+--style='header,grid'
 -m '*.conf:INI'
+-m '.justfile:Makefile'
+-m 'justfile:Makefile'
+-m '*.just:Makefile'

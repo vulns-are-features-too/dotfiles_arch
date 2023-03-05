@@ -28,7 +28,7 @@ done
 unset _comp_dumpfile ZDOTDIR XDG_CACHE_HOME XDG_CONFIG_HOME XDG_DATA_HOME
 # Completion
 fpath=($fpath /usr/share/zsh/functions/Completion/* $COMPLETION_DIR)
-zstyle ':autocomplete:*' ignored-input 'yta##'
+zstyle ':autocomplete:*' ignored-input 'yt##'
 zstyle ':autocomplete:*' min-input 1
 zstyle ':autocomplete:*' recent-dirs
 zstyle ':autocomplete:tab:*' insert-unambiguous yes
@@ -73,3 +73,22 @@ compdef _just jj
 
 eval "$(zoxide init --cmd 'j' --hook 'pwd' zsh)"
 eval "$(starship init zsh)"
+
+
+# broot
+function br {
+    local cmd cmd_file code
+    cmd_file=$(mktemp)
+    if broot --outcmd "$cmd_file" "$@"; then
+        cmd=$(<"$cmd_file")
+        command rm -f "$cmd_file"
+        eval "$cmd"
+    else
+        code=$?
+        command rm -f "$cmd_file"
+        return "$code"
+    fi
+}
+
+# zellij
+# eval "$(zellij setup --generate-auto-start zsh)"

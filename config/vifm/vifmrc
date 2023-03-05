@@ -356,7 +356,7 @@ elseif executable('xsel')
 endif
 
 " Mappings for faster renaming
-nnoremap cc cw<c-u>
+nnoremap cc :rename<CR>
 nnoremap A cw
 
 " Open editor to edit vifmrc and apply settings after returning to vifm

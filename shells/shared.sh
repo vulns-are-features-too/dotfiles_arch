@@ -14,7 +14,10 @@ err() {
 
 # Package managers
 alias p='pacman'
+alias pss='pacman -Ss'
+alias pqs='pacman -Qs'
 alias sp='sudo pacman'
+alias sps='sudo pacman -S'
 
 # Edit
 alias e="$EDITOR"
@@ -78,14 +81,18 @@ alias fgrep='grep -F'
 alias t='tmux'
 alias tt='tmux new -A -s general'
 
+# zellij
+alias z='zellij'
+
 # Other conveniences
 alias cp='cp -i'
 alias df='df -h'
 alias free='free -m'
 alias ..='cd ..'
 alias ...='cd ../..'
+alias cdl='cd $(pwd -P)'
 alias i='setsid sxiv -ab'
-alias z='setsid zathura'
+alias pdf='setsid zathura'
 alias f="$FILE_CLI"
 alias c='xclip -selection clipboard -r'
 alias cv='xclip -o'
@@ -120,12 +127,12 @@ alias pqr='pueue restart -ai'
 # pentest
 alias r2='r2 -A'
 alias trid="LC_ALL=C trid"
-alias pyh='python3 -m http.server'
-alias pyH='python-http-server'
+alias hl='python3 -m http.server'
+alias hll='python-http-server'
 alias msf="msfconsole -q"
 alias 600='chmod 600'
-alias pwncat="python -m pwncat -c $HOME/.config/pwncat/pwncatrc"
 alias ncl='nc -lnvp'
+alias ssp='searchsploit'
 
 # Internet
 alias yt='yt-dlp --no-playlist'
