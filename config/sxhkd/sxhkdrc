@@ -3,7 +3,7 @@
 super + t
 	unicode_copy
 super + space; t
-	$TERMINAL -e tremc -n
+	$TERMINAL -e tremc -n -X
 super + i
 	$TERMINAL -e btop
 super + o
@@ -48,7 +48,7 @@ super + space; r
 super + space; c
 	bwmenu
 super + space; b
-	buku_run
+	fbm
 super + v
 	clip
 super + ctrl + v

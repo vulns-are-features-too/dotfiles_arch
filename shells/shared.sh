@@ -35,6 +35,7 @@ alias ea="xargs -d '\n' $EDITOR"
 alias er="$EDITOR README.md"
 alias et="$EDITOR TODO.md"
 alias ek="$EDITOR ~/.config/sxhkd/sxhkdrc"
+alias ekk="$EDITOR keymap.c"
 alias en='vidir'
 alias eo="$EDITOR -c 'Telescope oldfiles'"
 

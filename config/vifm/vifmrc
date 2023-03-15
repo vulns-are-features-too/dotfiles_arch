@@ -368,7 +368,7 @@ nnoremap ,C :!vim --remote-tab-silent $MYVIFMRC &<cr>
 nnoremap ,w :set wrap!<cr>
 
 " Quit vifm
-nnoremap <A-q> :q<CR>
+nnoremap <C-q> :q<CR>
 
 " git
 noremap ,g :!lazygit<CR>
