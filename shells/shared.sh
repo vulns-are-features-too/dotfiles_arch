@@ -18,6 +18,8 @@ alias pss='pacman -Ss'
 alias pqs='pacman -Qs'
 alias sp='sudo pacman'
 alias sps='sudo pacman -S'
+alias yss='yay -Ss'
+alias ys='yay -S'
 
 # Edit
 alias e="$EDITOR"
@@ -73,6 +75,13 @@ else
   alias lld='ls -dl'
 fi
 
+# cat/bat
+alias b="bat"
+alias batdiff="batdiff --delta"
+alias bt='bat TODO.md'
+alias bfs='bat /etc/fstab'
+alias bp='bat /etc/pacman.conf'
+
 # grep
 alias grep='grep --color=auto'
 alias egrep='grep -E'
@@ -108,8 +117,6 @@ alias m='setsid mpv'
 alias mpvrand="xargs -d '\n' mpv --shuffle"
 alias ard='arduino-cli'
 alias rcsync='rclone sync -P'
-alias b="bat"
-alias batdiff="batdiff --delta"
 alias dr='dragon -a -x'
 alias vpn="sudo openvpn"
 alias frm='fuzzy-rm'
