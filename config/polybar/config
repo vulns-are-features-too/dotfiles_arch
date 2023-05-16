@@ -215,7 +215,7 @@ format-charging-padding = 0
 
 format-discharging = POW: <label-discharging>
 format-discharging-background = ${colors.bg}
-format-discharging-foreground = ${colors.fg}
+format-discharging-foreground = ${colors.red}
 format-discharging-padding = 0
 
 format-full = POW: 100%

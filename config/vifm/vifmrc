@@ -338,20 +338,25 @@ vnoremap I :!sxiv -abf %f<cr>
 " Interaction with system clipboard
 if has('win')
     " Yank current directory path to Windows clipboard with forward slashes
-    nnoremap yp :!echo %"d:gs!\!/! %i | clip<cr>
+    nnoremap yd :!echo %"d:gs!\!/! %i | clip<cr>
     " Yank path to current file to Windows clipboard with forward slashes
-    nnoremap yf :!echo %"c:gs!\!/! %i | clip<cr>
+    nnoremap yp :!echo %"c:gs!\!/! %i | clip<cr>
 elseif executable('xclip')
     " Yank current directory path into the clipboard
-    nnoremap yd :!echo %d | xclip %i<cr>
+    nnoremap yd :!echo %d | xclip -selection clipboard -r %i<cr>
+    " Yank current file into the clipboard
+    nnoremap yf :!echo %c | xclip -selection clipboard -r %i<cr>
     " Yank current file path into the clipboard
-    nnoremap yf :!echo %c:p | xclip %i<cr>
+    nnoremap yp :!echo %c:p | xclip -selection clipboard -r %i<cr>
 elseif executable('xsel')
     " Yank current directory path into primary and selection clipboards
     nnoremap yd :!echo -n %d | xsel --input --primary %i &&
                 \ echo -n %d | xsel --clipboard --input %i<cr>
+    " Yank current file into into primary and selection clipboards
+    nnoremap yf :!echo -n %c | xsel --input --primary %i &&
+                \ echo -n %c | xsel --clipboard --input %i<cr>
     " Yank current file path into into primary and selection clipboards
-    nnoremap yf :!echo -n %c:p | xsel --input --primary %i &&
+    nnoremap yp :!echo -n %c:p | xsel --input --primary %i &&
                 \ echo -n %c:p | xsel --clipboard --input %i<cr>
 endif
 

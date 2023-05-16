@@ -7,9 +7,9 @@ super + space; t
 super + i
 	$TERMINAL -e btop
 super + o
-	$TERMINAL -e calcurse
-super + space; o
 	obsidian
+super + space; o
+	$TERMINAL -e calcurse
 super + p
 	$TERMINAL -e bpython
 super + space; d

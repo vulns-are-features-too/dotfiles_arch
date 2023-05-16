@@ -1,6 +1,20 @@
 #!/bin/sh
 # shellcheck disable=SC2139,SC3009,SC3010
 
+### env vars ###
+
+# bat
+export BATDIFF_USE_DELTA=true
+
+# python
+export PYTHONSTARTUP="$HOME/.config/pythonrc"
+
+# exa
+export TIME_STYLE=long-iso
+
+# zoxide
+export _ZO_RESOLVE_SYMLINKS=0
+
 ### utils ###
 
 color_reset="\x1b[0m"
@@ -77,7 +91,6 @@ fi
 
 # cat/bat
 alias b="bat"
-alias batdiff="batdiff --delta"
 alias bt='bat TODO.md'
 alias bfs='bat /etc/fstab'
 alias bp='bat /etc/pacman.conf'
@@ -87,12 +100,8 @@ alias grep='grep --color=auto'
 alias egrep='grep -E'
 alias fgrep='grep -F'
 
-# tmux
-alias t='tmux'
-alias tt='tmux new -A -s general'
-
-# zellij
-alias z='zellij'
+# terminal multiplexing (zellij)
+alias t='zellij'
 
 # Other conveniences
 alias cp='cp -i'
@@ -149,6 +158,7 @@ alias ytp='yt-dlp -o "%(playlist_index)s. %(title)s [%(id)s].%(ext)s"' # Downloa
 alias get-ip='curl ifconfig.me'
 alias trc='transmission-remote -N'
 alias bm='buku'
+alias bma='buku -a'
 alias fbm='fuzzy-bookmark'
 
 # Encoding & Decoding

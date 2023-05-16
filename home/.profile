@@ -20,9 +20,6 @@ export FILE_CLI="vifm"
 export FILE_GUI="pcmanfm"
 export TERMINAL="alacritty"
 
-# python
-export PYTHONSTARTUP="$HOME/.config/pythonrc"
-
 # building
 export RUSTC_WRAPPER='/usr/bin/sccache'
 
@@ -32,12 +29,6 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 # less
 export LESS="$LESS -R"
 export LESSOPEN="|/usr/bin/lesspipe.sh %s"
-
-# exa
-export TIME_STYLE=long-iso
-
-# zoxide
-export _ZO_RESOLVE_SYMLINKS=0
 
 # mpc
 export MPC_FORMAT='%title% - %artist%'
