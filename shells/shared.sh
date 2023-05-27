@@ -205,14 +205,32 @@ cd_git_root() {
   root="$(git rev-parse --show-toplevel)" && cd "$root" || exit 1
 }
 
-fj() {
+jf() {
   # fuzzy find jump to a dir or the dir containing a file
-  target="$(fd --hidden --follow --exclude .git | fzf --disabled)" &&
+  target="$(fd --hidden --follow --exclude .git | fzf)" &&
     if [ -d "$target" ]; then
       cd "$target"
     else
       cd "${target%/*}"
-    fi || exit 1
+    fi || return 1
+}
+
+jfd() {
+  # fuzzy find jump to a dir
+  target="$(fd --hidden --follow --exclude .git -t d | fzf)" &&
+    cd "$target" || return 1
+}
+
+jff() {
+  # fuzzy find jump to the dir containing a file
+  target="$(fd --hidden --follow --exclude .git -t f | fzf)" &&
+    cd "$(dirname "$target")" || return 1
+}
+
+jfe() {
+  # fuzzy find a file, jump to its directory, and edit the file
+  target="$(fd --hidden --follow --exclude .git -t f | fzf)" &&
+    cd "$(dirname "$target")" && "$EDITOR" "$(basename "$target")" || return 1
 }
 
 ed() {

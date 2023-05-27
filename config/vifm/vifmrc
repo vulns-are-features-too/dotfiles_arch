@@ -302,7 +302,7 @@ set classify+=' ::*.doc,,*.docx,,*.odt::, ::*.xls,,*.xls[mx]::, ::*.ppt
 
 " What should be saved automatically between vifm sessions.  Drop "savedirs"
 " value if you don't want vifm to remember last visited directories for you.
-set vifminfo=bmarks,bookmarks,savedirs,state,tabs,tui
+set vifminfo=bmarks,bookmarks,savedirs,state,tabs,tui,dirstack,dhistory,savedirs
 
 " ------------------------------------------------------------------------------
 

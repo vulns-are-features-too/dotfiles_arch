@@ -1,8 +1,8 @@
 [global]
     ### Display ###
     monitor = 0
-    follow = mouse
-    geometry = "300x5-30+20"
+    follow = keyboard
+    geometry = "0x0-30+20"
     indicate_hidden = yes
     shrink = no
     transparency = 0
@@ -53,9 +53,9 @@
     ignore_dbusclose = false
 
     ### mouse
-    mouse_left_click = close_current
-    mouse_middle_click = do_action, close_current
-    mouse_right_click = close_all
+    mouse_left_click = do_action, close_current
+    mouse_middle_click = close_all
+    mouse_right_click = close_current
 
 # Experimental features that may or may not work correctly. Do not expect them
 # to have a consistent behaviour across releases.
@@ -72,7 +72,7 @@
     timeout = 10
     #icon = /path/to/icon
 [urgency_normal]
-    background = "#285577"
+    background = "#222222"
     foreground = "#ffffff"
     timeout = 10
     #icon = /path/to/icon

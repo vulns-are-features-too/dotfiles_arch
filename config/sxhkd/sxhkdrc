@@ -1,7 +1,7 @@
 ##### Basic bindings #####
 
 super + t
-	unicode_copy
+	unicode-copy
 super + space; t
 	$TERMINAL -e tremc -n -X
 super + i
@@ -126,7 +126,7 @@ super + shift + r
 super + alt + {h,j,k,l}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 super + ctrl + u; {q,w,e,a,s,d,z,x,c}
-	move_floating 3 3 {1,2,3,4,5,6,7,8,9}
+	move-floating 3 3 {1,2,3,4,5,6,7,8,9}
 
 # Toggle floating
 super + u
@@ -140,7 +140,7 @@ super + shift + u
 super + y
 	bspc node -g hidden=on
 super + shift + y
-	bsp_unhideall
+	bsp-unhideall
 
 #super + {i,o}
 	#bspc node -f {prev,next}.local
@@ -153,7 +153,7 @@ super + shift + y
 
 # Menu for shutdown, reboot, etc.
 super + F12
-	power_menu
+	power-menu
 # Quick lock screen
 super + shift + F12
 	i3lock -c 000000
@@ -166,7 +166,7 @@ super + F5
 	notify-send "Restart daemons"
 # restart polybar
 super + shift + F5
-	launch_polybar
+	launch-polybar
 # restart bspwm
 super + ctrl + F5
 	bspc wm -r

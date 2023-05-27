@@ -43,7 +43,7 @@ bspc rule -a Zathura state=tiled
 wmname LG3D
 
 pgrep sxhkd || sxhkd &
-launch_polybar &
+launch-polybar &
 
 # VirtualBox client
 if [ "$(systemd-detect-virt)" != "none" ]; then
