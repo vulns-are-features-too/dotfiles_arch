@@ -334,6 +334,9 @@ nnoremap o :!$EDITOR %f<cr>
 " Open images
 nnoremap I :!sxiv -abf .<cr>
 vnoremap I :!sxiv -abf %f<cr>
+" Play videos
+nnoremap V :!mpv --loop-file=inf .<cr>
+vnoremap V :!mpv --loop-file=inf %f<cr>
 
 " Interaction with system clipboard
 if has('win')
@@ -384,16 +387,16 @@ noremap <space> :select<cr>
 " go to directory
 noremap gh :cd ~<cr>
 
-" dragon
+" ripdrag
 " drop all & exit
-noremap dr :!dragon -a -x %f<CR>
+noremap dr :!ripdrag -a -d -x %f<CR>
 " drop all, stay
-noremap ds :!dragon -a %f<CR>
+noremap ds :!ripdrag -a -d %f<CR>
 " drop single files, stay
-noremap de :!dragon %f<CR>
+noremap de :!ripdrag -d %f<CR>
 " paste target
-noremap dm :!dragon-drag-n-drop mv<CR>
-noremap dc :!dragon-drag-n-drop cp<CR>
+noremap dm :!riprag-n-drop mv<CR>
+noremap dc :!ripdrag-n-drop cp<CR>
 
 " gocryptfs
 nnoremap cd :!mkdir "%f.crypt" && gocryptfs "%f" "%f.crypt" || rmdir "%f.crypt"<CR>

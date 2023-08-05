@@ -34,5 +34,9 @@ bind L tabnext
 bind K forward
 bind J back
 
+" yanking
 bind i hint -S
 bind I hint -A
+bing yl hint -y
+bing ye hint -p
+bing yt hint -P
