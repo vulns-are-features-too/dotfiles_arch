@@ -19,7 +19,7 @@ font:
   bold_italic:
     family: Liberation Mono
     style: Bold Italic
-  size: 7
+  size: 12
 
 # Colors
 colors:
@@ -64,10 +64,10 @@ key_bindings:
   # general terminal controls
   - { key: C, mods: Control|Shift, action: Copy }
   - { key: V, mods: Control|Shift, action: Paste }
-  # - { key: J, mods: Control|Shift, action: ScrollLineDown }
-  # - { key: K, mods: Control|Shift, action: ScrollLineUp }
-  # - { key: H, mods: Control|Shift, action: ScrollPageDown }
-  # - { key: L, mods: Control|Shift, action: ScrollPageUp }
+  - { key: J, mods: Control|Shift, action: ScrollLineDown }
+  - { key: K, mods: Control|Shift, action: ScrollLineUp }
+  - { key: H, mods: Control|Shift, action: ScrollPageDown }
+  - { key: L, mods: Control|Shift, action: ScrollPageUp }
   - { key: Minus, mods: Alt, action: DecreaseFontSize }
   - { key: Plus, mods: Alt|Shift, action: ResetFontSize }
   - { key: Equals, mods: Alt, action: IncreaseFontSize }
@@ -82,11 +82,11 @@ key_bindings:
   - { key: E, mods: Control|Shift, chars: "\x1b[69;5u" }
   - { key: F, mods: Control|Shift, chars: "\x1b[70;5u" }
   - { key: G, mods: Control|Shift, chars: "\x1b[71;5u" }
-  - { key: H, mods: Control|Shift, chars: "\x1b[72;5u" }
+  # - { key: H, mods: Control|Shift, chars: "\x1b[72;5u" }
   - { key: I, mods: Control|Shift, chars: "\x1b[73;5u" }
-  - { key: J, mods: Control|Shift, chars: "\x1b[74;5u" }
-  - { key: K, mods: Control|Shift, chars: "\x1b[75;5u" }
-  - { key: L, mods: Control|Shift, chars: "\x1b[76;5u" }
+  # - { key: J, mods: Control|Shift, chars: "\x1b[74;5u" }
+  # - { key: K, mods: Control|Shift, chars: "\x1b[75;5u" }
+  # - { key: L, mods: Control|Shift, chars: "\x1b[76;5u" }
   - { key: M, mods: Control|Shift, chars: "\x1b[77;5u" }
   - { key: N, mods: Control|Shift, chars: "\x1b[78;5u" }
   - { key: O, mods: Control|Shift, chars: "\x1b[79;5u" }
