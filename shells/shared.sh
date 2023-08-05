@@ -29,6 +29,7 @@ err() {
 # Package managers
 alias p='pacman'
 alias pss='pacman -Ss'
+alias pii='pacman -Sii'
 alias pqs='pacman -Qs'
 alias sp='sudo pacman'
 alias sps='sudo pacman -S'
@@ -52,14 +53,16 @@ alias er="$EDITOR README.md"
 alias et="$EDITOR TODO.md"
 alias ek="$EDITOR ~/.config/sxhkd/sxhkdrc"
 alias ekk="$EDITOR keymap.c"
-alias en='vidir'
+alias en='renamer'
 alias eo="$EDITOR -c 'Telescope oldfiles'"
+alias vin="$EDITOR -u NONE"
 
 # git
 alias g='git'
 alias gr='cd_git_root'
 alias gd='git diff'
-alias gdh='git diff HEAD'
+alias gds='git diff --stat'
+alias gdhs='git diff HEAD --stat'
 alias gD='git difftool'
 alias gD='git difftool HEAD'
 alias gs='git status'
@@ -113,8 +116,6 @@ alias cdl='cd $(pwd -P)'
 alias i='setsid sxiv -ab'
 alias pdf='setsid zathura'
 alias f="$FILE_CLI"
-alias c='xclip -selection clipboard -r'
-alias cv='xclip -o'
 alias q='exit'
 alias o='xdg-open'
 alias h='help'
@@ -126,17 +127,22 @@ alias m='setsid mpv'
 alias mpvrand="xargs -d '\n' mpv --shuffle"
 alias ard='arduino-cli'
 alias rcsync='rclone sync -P'
-alias dr='dragon -a -x'
+alias dr='ripdrag -a -d -x'
 alias vpn="sudo openvpn"
 alias frm='fuzzy-rm'
 alias jj='just'
 alias jl='just --list'
 alias cls='clear'
 
+# clipboard
+alias c='xclip -selection clipboard -r'
+alias cv='xclip -o'
+cf() { cat "${@[@]}" | xclip -selection clipboard -r; }
+
 # pueue
 alias pq='pueue'
 alias pf='pueue-fuzzy'
-alias psum='pueue status -j | jq -r -f ~/git/scripts/jq/pueue_summary.jq'
+alias psum='pueue status -j | jq -r -f ~/git/scripts/jq/pueue-summary.jq'
 alias pqc='pueue clean -s'
 alias pqa='pueue add'
 alias pqr='pueue restart -ai'

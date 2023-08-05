@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# `setxkbmap` resets `xmodmap`
 [[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 

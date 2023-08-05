@@ -36,10 +36,10 @@ vicmd_symbol = "[V](bold green)"
 
 [shell]
 disabled = false
-bash_indicator = "B"
-zsh_indicator = "Z"
-powershell_indicator = "PS"
-cmd_indicator = "CMD"
+bash_indicator = "[B](bold green)"
+zsh_indicator = "[Z](bold white)"
+powershell_indicator = "[PS](bold blue)"
+cmd_indicator = "[CMD](bold purple)"
 
 [sudo]
 disabled = false

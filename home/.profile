@@ -25,6 +25,7 @@ export RUSTC_WRAPPER='/usr/bin/sccache'
 
 # bat
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANROFFOPT="-c"
 
 # less
 export LESS="$LESS -R"
