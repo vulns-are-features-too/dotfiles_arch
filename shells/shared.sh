@@ -9,7 +9,7 @@ export BATDIFF_USE_DELTA=true
 # python
 export PYTHONSTARTUP="$HOME/.config/pythonrc"
 
-# exa
+# eza
 export TIME_STYLE=long-iso
 
 # zoxide
@@ -62,9 +62,10 @@ alias g='git'
 alias gr='cd_git_root'
 alias gd='git diff'
 alias gds='git diff --stat'
+alias gdh='git diff HEAD'
 alias gdhs='git diff HEAD --stat'
 alias gD='git difftool'
-alias gD='git difftool HEAD'
+alias gDh='git difftool HEAD'
 alias gs='git status'
 alias ga='git add .'
 alias gc='git commit'
@@ -76,14 +77,14 @@ alias gcl='git clone --depth 1'
 alias {G,lg}='lazygit'
 
 # ls
-if type exa > /dev/null; then
-  alias {ls,l,sl,exa}='exa --group-directories-first'
-  alias la='exa -a'
-  alias ll='exa -Fgl --header'
-  alias lla='exa -aFgl --header'
-  alias lld='exa -dgl --header'
-  alias tree='exa -F --git-ignore --tree'
-  alias ltree='exa -Fl --tree'
+if type eza > /dev/null; then
+  alias {ls,l,sl,eza}='eza --group-directories-first'
+  alias la='eza -a'
+  alias ll='eza -Fgl --header'
+  alias lla='eza -aFgl --header'
+  alias lld='eza -dgl --header'
+  alias tree='eza -F --git-ignore --tree'
+  alias ltree='eza -Fl --tree'
 else
   alias {ls,l,sl}='ls -hN --color=auto --group-directories-first'
   alias la='ls -A'
@@ -133,6 +134,7 @@ alias frm='fuzzy-rm'
 alias jj='just'
 alias jl='just --list'
 alias cls='clear'
+alias prettier-opml='prettier --parser html --bracket-same-line --print-width 200'
 
 # clipboard
 alias c='xclip -selection clipboard -r'
@@ -144,6 +146,7 @@ alias pq='pueue'
 alias pf='pueue-fuzzy'
 alias psum='pueue status -j | jq -r -f ~/git/scripts/jq/pueue-summary.jq'
 alias pqc='pueue clean -s'
+alias pqC='pueue clean'
 alias pqa='pueue add'
 alias pqr='pueue restart -ai'
 

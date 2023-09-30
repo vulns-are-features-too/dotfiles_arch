@@ -223,7 +223,7 @@ fileviewer *.docx docx2txt.pl %c -
 
 " Directories
 fileviewer */,.*/
-        \ exa -aFghl --color=always --git --group-directories-first --icons %f
+        \ eza -aFghl --color=always --git --group-directories-first --icons %f
 
 
 " code and other text formats
