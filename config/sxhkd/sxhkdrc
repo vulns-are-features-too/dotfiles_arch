@@ -56,8 +56,10 @@ super + ctrl + v
 
 ##### bspwm #####
 
-# close/kill
 super + q
+	bsp-close-unless
+# close/kill
+super + shift + q
 	bspc node -c
 super + ctrl + q
 	bspc node -k
