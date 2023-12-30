@@ -133,7 +133,7 @@ fileviewer *.[1-8] man ./%c | col -b
 
 " Images
 filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
-        \ devour sxiv %f
+        \ devour nsxiv %f
 fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
          \ exiftool %c
 
@@ -332,8 +332,8 @@ vnoremap w :view<cr>gv
 nnoremap o :!$EDITOR %f<cr>
 
 " Open images
-nnoremap I :!sxiv -abf .<cr>
-vnoremap I :!sxiv -abf %f<cr>
+nnoremap I :!nsxiv -abf .<cr>
+vnoremap I :!nsxiv -abf %f<cr>
 " Play videos
 nnoremap V :!mpv --loop-file=inf .<cr>
 vnoremap V :!mpv --loop-file=inf %f<cr>

@@ -39,7 +39,8 @@ alias ys='yay -S'
 # Edit
 alias e="$EDITOR"
 alias se="sudoedit"
-alias ee="$EDITOR ~/.config/nvim/init.vim"
+alias e.="$EDITOR ."
+alias ee="$EDITOR ~/.config/nvim/init.lua"
 alias eek="$EDITOR ~/.config/nvim/lua/settings/keymaps.lua"
 alias eep="$EDITOR ~/.config/nvim/lua/plugins/plugins.lua"
 alias eel="$EDITOR ~/.config/nvim/lua/plugins/lsp.lua"
@@ -75,6 +76,7 @@ alias gC='git rev-parse --short HEAD'
 alias gCC='git rev-parse HEAD'
 alias gcl='git clone --depth 1'
 alias {G,lg}='lazygit'
+alias gg='gitui'
 
 # ls
 if type eza > /dev/null; then
@@ -107,6 +109,9 @@ alias fgrep='grep -F'
 # terminal multiplexing (zellij)
 alias t='zellij'
 
+# python
+alias psh='pipenv shell'
+
 # Other conveniences
 alias cp='cp -i'
 alias df='df -h'
@@ -114,9 +119,10 @@ alias free='free -m'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias cdl='cd $(pwd -P)'
-alias i='setsid sxiv -ab'
+alias i='setsid nsxiv -ab'
 alias pdf='setsid zathura'
 alias f="$FILE_CLI"
+alias {ff,f.}="$FILE_CLI ."
 alias q='exit'
 alias o='xdg-open'
 alias h='help'
