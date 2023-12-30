@@ -1,0 +1,216 @@
+[window]
+opacity = 1.0
+
+[bell]
+animation = "Ease"
+color = "0xffffff"
+duration = 10
+
+[colors.normal]
+black = "#000000"
+blue = "#4040ff"
+cyan = "#00ffff"
+green = "#00ff00"
+magenta = "#ff00ff"
+red = "#ff0000"
+white = "#ffffff"
+yellow = "#ffff00"
+
+[colors.primary]
+background = "#000000"
+foreground = "#ffffff"
+
+[env]
+TERM = "alacritty"
+
+[font]
+size = 12
+
+[font.bold]
+family = "Liberation Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "Liberation Mono"
+style = "Bold Italic"
+
+[font.italic]
+family = "Liberation Mono"
+style = "Italic"
+
+[font.normal]
+family = "Liberation Mono"
+style = "Regular"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "ScrollLineDown"
+key = "J"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "ScrollLineUp"
+key = "K"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "ScrollPageDown"
+key = "H"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "ScrollPageUp"
+key = "L"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Plus"
+mods = "Alt|Shift"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Equals"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "Return"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = """
+!!
+"""
+key = "Return"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = """
+clear
+"""
+key = "Back"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "ToggleViMode"
+key = "Escape"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[65;5u"
+key = "A"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[66;5u"
+key = "B"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[68;5u"
+key = "D"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[69;5u"
+key = "E"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[70;5u"
+key = "F"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[71;5u"
+key = "G"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[73;5u"
+key = "I"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[77;5u"
+key = "M"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[78;5u"
+key = "N"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[79;5u"
+key = "O"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[80;5u"
+key = "P"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[81;5u"
+key = "Q"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[82;5u"
+key = "R"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[83;5u"
+key = "S"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[84;5u"
+key = "T"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[85;5u"
+key = "U"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[87;5u"
+key = "W"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[88;5u"
+key = "X"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[89;5u"
+key = "Y"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[90;5u"
+key = "Z"
+mods = "Control|Shift"
+
+[scrolling]
+history = 100000
+multiplier = 3
