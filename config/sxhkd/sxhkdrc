@@ -116,6 +116,10 @@ super + r; {1-9}
 super + shift + r
 	bspc node -p cancel
 
+# preselect the ratio
+super + r; super + r
+	rotate-screen
+
 # cancel the preselection for the focused desktop
 #super + space
 #bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
@@ -190,16 +194,14 @@ shift + XF86Audio{Prev,Next}
 
 ##### Screenshots #####
 
-# full screenshot to clipboard
 Print
+	flameshot gui
+# full screenshot to clipboard
+shift + Print
 	maim | xclip -selection clipboard -t image/png && notify-send "Copied screenshot to clipboard"
 # full screenshot to file
-shift + Print
-	maim "$HOME/Pictures/screenshots/screenshot_$(date '+%y%m%d-%H%M-%S').png" && notify-send "Saved screenshot"
 ctrl + Print
-	flameshot gui -p ~/Pictures/screenshots
-super + Print
-	flameshot gui -c
+	maim "$HOME/Pictures/screenshots/screenshot_$(date '+%y%m%d-%H%M-%S').png" && notify-send "Saved screenshot"
 
 ##### XF86 keys #####
 
