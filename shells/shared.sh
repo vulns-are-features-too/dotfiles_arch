@@ -100,6 +100,7 @@ alias b="bat"
 alias bt='bat TODO.md'
 alias bfs='bat /etc/fstab'
 alias bp='bat /etc/pacman.conf'
+alias fm='batman'
 
 # grep
 alias grep='grep --color=auto'
