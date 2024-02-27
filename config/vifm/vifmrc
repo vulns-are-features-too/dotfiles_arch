@@ -13,7 +13,6 @@ set sortnumbers
 set undolevels=100
 set vimhelp
 set norunexec
-colorscheme Default
 set timefmt='%d/%m %H:%M'
 set wildmenu
 set wildstyle=popup
@@ -24,6 +23,7 @@ set incsearch
 set scrolloff=10
 set vicmd=nvim
 set grepprg='rg --line-numbers %i %a %s'
+colorscheme gruvbox
 
 " Don't do too many requests to slow file systems
 if !has('win')
