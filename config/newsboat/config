@@ -1,5 +1,6 @@
 #show-read-feeds no
 auto-reload yes
+reload-threads 100
 
 external-url-viewer "urlscan -dc -r 'urlhandler {}'"
 
@@ -30,14 +31,14 @@ color listfocus_unread yellow default bold
 color info red black bold
 color article white default bold
 
-browser linkhandler
+browser urlhandler
 macro , open-in-browser
-macro t set browser "qndl"; open-in-browser ; set browser linkhandler
-macro a set browser "tsp youtube-dl --add-metadata -xic -f bestaudio/best"; open-in-browser ; set browser linkhandler
-macro v set browser "setsid -f mpv"; open-in-browser ; set browser linkhandler
-macro w set browser "lynx"; open-in-browser ; set browser linkhandler
-macro p set browser "dmenuhandler"; open-in-browser ; set browser linkhandler
-macro c set browser "xsel -b <<<" ; open-in-browser ; set browser linkhandler
+macro t set browser "qndl"; open-in-browser ; set browser urlhandler
+macro a set browser "tsp youtube-dl --add-metadata -xic -f bestaudio/best"; open-in-browser ; set browser urlhandler
+macro v set browser "setsid -f mpv"; open-in-browser ; set browser urlhandler
+macro w set browser "lynx"; open-in-browser ; set browser urlhandler
+macro p set browser "dmenuhandler"; open-in-browser ; set browser urlhandler
+macro c set browser "xsel -b <<<" ; open-in-browser ; set browser urlhandler
 
 highlight all "---.*---" yellow
 highlight feedlist ".*(0/0))" black
