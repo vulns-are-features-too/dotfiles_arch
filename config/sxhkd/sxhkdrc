@@ -53,6 +53,8 @@ super + v
 	clip
 super + ctrl + v
 	pkill greenclip && greenclip clear && notify-send "Nuked clipboard" && greenclip daemon &
+super + shift + v
+  launch-vm
 
 ##### bspwm #####
 
@@ -232,3 +234,8 @@ super + shift + F7
 # Stop presentation programs
 super + F7
 	killall screenkey
+
+##### Misc #####
+
+super + space; n
+  show-time
