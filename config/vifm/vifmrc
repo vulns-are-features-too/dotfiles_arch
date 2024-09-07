@@ -61,7 +61,7 @@ command! make !!make %a
 command! mkcd :mkdir %a | cd %a
 command! vgrep vim "+grep %a"
 command! reload :write | restart
-command! id3 :!id3 %f
+command! id3 :!fix-id3-title-artist %f
 command! aud :!audacity %f
 command! oyt :!oyt %f
 
