@@ -18,7 +18,10 @@ pgrep unclutter || unclutter --ignore-scrolling --jitter 5 &
 pgrep flameshot || flameshot &
 pgrep transmission-daemon || transmission-daemon -er -t &
 pgrep lxpolkit || lxpolkit &
-xss-lock -q -- i3lock -c 000000 &
+
+# screenlock: dim after 10min inactive, then lock after another 1min
+xset s 600 60
+xss-lock -n dim-screen -- lock-screen &
 
 # Start window manager
 bspwm -c ~/.config/bspwm/bspwmrc
