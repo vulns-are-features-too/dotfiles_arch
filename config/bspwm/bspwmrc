@@ -38,6 +38,7 @@ bspc rule -a St:$dropdownname state=floating
 #bspc rule -a python state=floating
 bspc rule -a Screenkey manage=off
 bspc rule -a Zathura state=tiled
+bspc rule -a ripdrag state=floating sticky=on
 
 # Fix Java applications
 wmname LG3D
