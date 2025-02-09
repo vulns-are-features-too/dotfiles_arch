@@ -31,14 +31,9 @@ color listfocus_unread yellow default bold
 color info red black bold
 color article white default bold
 
-browser urlhandler
-macro , open-in-browser
-macro t set browser "qndl"; open-in-browser ; set browser urlhandler
-macro a set browser "tsp youtube-dl --add-metadata -xic -f bestaudio/best"; open-in-browser ; set browser urlhandler
-macro v set browser "setsid -f mpv"; open-in-browser ; set browser urlhandler
-macro w set browser "lynx"; open-in-browser ; set browser urlhandler
-macro p set browser "dmenuhandler"; open-in-browser ; set browser urlhandler
-macro c set browser "xsel -b <<<" ; open-in-browser ; set browser urlhandler
+browser firefox
+macro o set browser "urlhandler"; open-in-browser ; set browser firefox
+macro v set browser "setsid -f mpv"; open-in-browser ; set browser firefox
 
 highlight all "---.*---" yellow
 highlight feedlist ".*(0/0))" black
