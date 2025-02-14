@@ -321,3 +321,7 @@ sub_vid() {
   tmp="$(mktemp --suffix=".${1##*.}")"
   ffmpeg -i "$1" -i "$2" -c:v copy -c:a copy -c:s mov_text -y "$tmp" "${@[@]:3}" && mv "$tmp" "${1}"
 }
+
+if [[ "$(w -h | wc -l)" -gt 1 ]]; then
+  w
+fi
