@@ -38,7 +38,7 @@ zstyle ':completion:*:complete:*:' group-order files executables local-directori
 zstyle ':completion:*:complete:*:' tag-order '! ancestor-directories recent-directories recent-files' -
 zstyle ':completion:list-expand:*' extra-verbose yes
 
-source ~/tools/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 # Key bindings
 typeset -g -A key
