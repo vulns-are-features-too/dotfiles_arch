@@ -33,7 +33,7 @@ color info red black bold
 color article white default bold
 
 browser firefox
-macro o set browser "urlhandler"; open-in-browser ; set browser firefox
+macro , set browser "urlhandler"; open-in-browser-and-mark-read ; set browser firefox
 macro v set browser "setsid -f mpv"; open-in-browser ; set browser firefox
 
 highlight all "---.*---" yellow
