@@ -28,6 +28,8 @@ done
 unset _comp_dumpfile ZDOTDIR XDG_CACHE_HOME XDG_CONFIG_HOME XDG_DATA_HOME
 # Completion
 fpath=($fpath /usr/share/zsh/functions/Completion/* $COMPLETION_DIR)
+source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+
 zstyle ':autocomplete:*' ignored-input 'yt##'
 zstyle ':autocomplete:*' min-input 1
 zstyle ':autocomplete:*' recent-dirs
@@ -37,8 +39,6 @@ zstyle ':completion:*' extra-verbose yes
 zstyle ':completion:*:complete:*:' group-order files executables local-directories options builtins history-words
 zstyle ':completion:*:complete:*:' tag-order '! ancestor-directories recent-directories recent-files' -
 zstyle ':completion:list-expand:*' extra-verbose yes
-
-source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 # Key bindings
 typeset -g -A key
