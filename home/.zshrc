@@ -40,6 +40,10 @@ zstyle ':completion:*:complete:*:' group-order files executables local-directori
 zstyle ':completion:*:complete:*:' tag-order '! ancestor-directories recent-directories recent-files' -
 zstyle ':completion:list-expand:*' extra-verbose yes
 
+# issue: https://github.com/marlonrichert/zsh-autocomplete/issues/741
+# fix: https://github.com/marlonrichert/zsh-autocomplete/issues/742#issuecomment-2537561227
+zstyle ':completion:*' completer _complete _complete:-fuzzy _correct _approximate _ignored
+
 # Key bindings
 typeset -g -A key
 key[Home]=$terminfo[khome]
