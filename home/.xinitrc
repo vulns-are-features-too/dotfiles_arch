@@ -23,5 +23,14 @@ pgrep lxpolkit || lxpolkit &
 xset s 600 60
 xss-lock -n dim-screen -- lock-screen &
 
+# last if block from /etc/X11/xinit/xinitrc
+xinitdir=/etc/X11/xinit
+if [ -d $xinitdir/xinitrc.d ] ; then
+ for f in "$xinitdir/xinitrc.d"/?*.sh ; do
+  [ -x "$f" ] && . "$f"
+ done
+ unset f
+fi
+
 # Start window manager
 bspwm -c ~/.config/bspwm/bspwmrc
