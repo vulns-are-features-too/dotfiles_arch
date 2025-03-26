@@ -52,7 +52,7 @@ super + space; b
 super + v
 	clip
 super + ctrl + v
-	pkill greenclip && greenclip clear && notify-send "Nuked clipboard" && greenclip daemon &
+	systemctl --user stop greenclip && greenclip clear && notify-send "Nuked clipboard" && systemctl --user start greenclip
 super + shift + v
   launch-vm
 
