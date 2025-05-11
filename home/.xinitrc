@@ -19,9 +19,11 @@ pgrep flameshot || flameshot &
 pgrep transmission-daemon || transmission-daemon -er -t &
 pgrep lxpolkit || lxpolkit &
 
-# screenlock: dim after 10min inactive, then lock after another 1min
-xset s 600 60
-xss-lock -n dim-screen -- lock-screen &
+# screenlock (host-only): dim after 10min inactive, then lock after another 1min
+if ! systemd-detect-virt -q ; then
+  xset s 600 60
+  xss-lock -n dim-screen -- lock-screen &
+fi
 
 # last if block from /etc/X11/xinit/xinitrc
 xinitdir=/etc/X11/xinit
