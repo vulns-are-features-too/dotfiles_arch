@@ -96,6 +96,7 @@ command! oyt :!oyt %f
 " Pdf
 filextype *.pdf zathura %c %i &, apvlv %c, xpdf %c
 filextype *.cbz zathura %c %i &, apvlv %c, xpdf %c
+filextype *.epub zathura %c %i &, apvlv %c, xpdf %c
 fileviewer *.pdf pdftotext -nopgbrk %c -
 
 " PostScript
