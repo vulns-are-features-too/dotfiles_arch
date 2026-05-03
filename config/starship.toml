@@ -10,6 +10,9 @@ $git_commit\
 $git_state\
 $git_status\
 $git_commit\
+$java\
+$nodejs\
+$python\
 $line_break\
 $status\
 $character\
@@ -46,3 +49,22 @@ disabled = false
 symbol = "#"
 style = "bold red"
 format = "[$symbol]($style) "
+
+[java]
+format = '[${symbol} ${pyenv_prefix}(${version}) (\(venv: $virtualenv\))]($style)'
+symbol = "Java"
+version_format = "${raw}"
+style = 'yellow bold'
+
+[nodejs]
+format = '[${symbol} ${pyenv_prefix}(${version}) (\(venv: $virtualenv\))]($style)'
+symbol = "NodeJS"
+version_format = "${raw}"
+style = 'yellow bold'
+
+[python]
+format = '[${symbol} ${pyenv_prefix}(${version}) (\(venv: $virtualenv\))]($style)'
+symbol = "Python"
+version_format = "${raw}"
+style = 'yellow bold'
+
