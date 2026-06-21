@@ -73,6 +73,10 @@ bindkey $key[Down] down-line-or-select
 
 # alias autocomplete
 compdef _gf gf
+function _gf {
+    _arguments "1: :($(gf -list))"
+}
+
 compdef _just jj
 
 eval "$(zoxide init --cmd 'j' --hook 'pwd' zsh)"
