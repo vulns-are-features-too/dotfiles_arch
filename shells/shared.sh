@@ -106,6 +106,7 @@ alias fm='batman'
 alias grep='grep --color=auto'
 alias egrep='grep -E'
 alias fgrep='grep -F'
+alias hl='rg --passthru'
 
 # terminal multiplexing (zellij)
 alias t='zellij'
@@ -160,8 +161,8 @@ alias pqr='pueue restart -ai'
 # pentest
 alias r2='r2 -A'
 alias trid="LC_ALL=C trid"
-alias hl='python3 -m http.server'
-alias hll='python-http-server'
+alias ph='python3 -m http.server'
+alias phh='python-http-server'
 alias msf="msfconsole -q"
 alias 600='chmod 600'
 alias ncl='nc -lnvp'
