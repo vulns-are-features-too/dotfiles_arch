@@ -27,6 +27,7 @@ magenta = #e84782
 lime = #C2C33F
 
 [bar/default]
+bottom = true
 ;monitor = ${env:MONITOR:LVDS-1}
 ;monitor = ${env:MONITOR:HDMI-1}
 enable-ipc = true
