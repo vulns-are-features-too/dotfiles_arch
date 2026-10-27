@@ -43,3 +43,5 @@ eval "$(ssh-agent -s)" &> /dev/null
 
 # GPG
 export GPG_TTY="$(tty)"
+
+export PIPX_COOLDOWN=7
